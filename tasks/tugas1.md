@@ -15,5 +15,5 @@ Buatlah cerita pendek dalam bahasa Inggris.
 - Tuliskan nama dan kelas.
 - Kumpulkan di meja saya (Pak Adhit) agar segera bisa diproses.
 
-## Periode Pengumulan:
-**2 Juni - 5 Juni 2026** (*batas akhir!*).
+## Periode Pengumpulan:
+**Selasa, 2 Juni - Jumat, 5 Juni 2026** (*batas akhir!*).
