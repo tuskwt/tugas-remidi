@@ -334,6 +334,12 @@
 
         classFilter.addEventListener('change', (e) => {
             currentFilter = e.target.value;
+            // Update URL hash agar mudah di-share (spasi diganti strip)
+            if (currentFilter === 'all') {
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            } else {
+                window.location.hash = currentFilter.replace(/ /g, '-');
+            }
             renderStudents();
         });
 
@@ -383,7 +389,7 @@
 
         function loadData() {
             // Tampilkan loading skeleton atau pesan jika perlu
-            grid.innerHTML = `<div class="col-span-full py-12 flex justify-center text-gray-500">Memuat data dari Google Sheets...</div>`;
+            grid.innerHTML = `<div class="col-span-full py-12 flex justify-center text-gray-500">Memuat...</div>`;
 
             // === PENGATURAN DATABASE GOOGLE SHEETS ===
             // Menggunakan Spreadsheet ID dari link "bagikan (restricted ke public)"
@@ -430,6 +436,17 @@
                         option.textContent = c;
                         classFilter.appendChild(option);
                     });
+
+                    // Cek hash pada URL untuk filter otomatis (misal: #X-TP)
+                    let hashFilter = decodeURIComponent(window.location.hash.substring(1));
+                    if (hashFilter) {
+                        // Kembalikan tanda strip (-) menjadi spasi ( ) untuk dicocokkan dengan data
+                        hashFilter = hashFilter.replace(/-/g, ' ');
+                        if (uniqueClasses.includes(hashFilter)) {
+                            classFilter.value = hashFilter;
+                            currentFilter = hashFilter;
+                        }
+                    }
 
                     renderStudents();
                 },
