@@ -14,3 +14,6 @@ Buatlah cerita pendek dalam bahasa Inggris.
 - Tugas ditulis tangan pada kertas sobekan.
 - Tuliskan nama dan kelas.
 - Kumpulkan di meja saya (Pak Adhit) agar segera bisa diproses.
+
+## Periode Pengumpulan:
+**Selasa, 2 Juni - Jumat, 5 Juni 2026** (*batas akhir!*).
